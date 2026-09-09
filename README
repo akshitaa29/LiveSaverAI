@@ -1,0 +1,194 @@
+#  LiveAISaver
+
+## AI-Powered Goal & Task Management Platform
+
+LiveAISaver is an AI-powered goal and task management platform designed to help users organize their goals, manage tasks, receive reminders, and intelligently reschedule missed work.
+
+The application uses AI to analyze tasks, provide recommendations, generate task plans, and redistribute deadlines when users fall behind.
+
+>  Frontend integration is currently in progress.
+
+---
+
+##  Features
+
+###  Authentication
+
+- User Registration
+- User Login
+- JWT Authentication
+- Protected Routes
+- Secure user-specific data access
+
+---
+
+### 🎯 Goal Management
+
+- Create goals
+- View goals
+- Update goals
+- Delete goals
+- Automatically delete associated tasks when a goal is deleted
+
+---
+
+###  Task Management
+
+- Create tasks
+- View all tasks
+- Get task by ID
+- Update tasks
+- Delete tasks
+- Get tasks associated with a specific goal
+- Manage task status
+
+Task statuses include:
+
+- Pending
+- In Progress
+- Completed
+
+---
+
+###  AI-Powered Task Analysis
+
+LiveAISaver uses AI to analyze tasks and generate useful information such as:
+
+- Task priority
+- Task difficulty
+- Estimated hours
+- Risk score
+- AI recommendations
+
+---
+
+###  AI Goal Planning
+
+Users can create goals and generate AI-powered task plans.
+
+The AI helps break larger goals into manageable tasks with appropriate deadlines.
+
+---
+
+###  AI Deadline Regeneration
+
+When a user misses an overdue task, they can regenerate their task plan.
+
+The AI:
+
+- Identifies remaining incomplete tasks
+- Considers task difficulty and estimated hours
+- Redistributes deadlines realistically
+- Keeps deadlines within the goal target date
+- Does not modify completed tasks
+- Does not create or remove tasks
+
+---
+
+###  Dashboard
+
+The backend includes dashboard APIs to provide task and productivity-related information.
+
+Examples include:
+
+- Total tasks
+- Completed tasks
+- Pending tasks
+- Overdue tasks
+- Task progress
+
+---
+
+###  Email Notifications
+
+LiveAISaver integrates email notifications using **Resend**.
+
+Currently implemented:
+
+- 🎉 Welcome email after registration
+- 📅 Today's tasks email
+- ⏰ Task reminder emails
+
+---
+
+###  Reminder System
+
+Users can create reminder tasks with a specific reminder time.
+
+The system automatically checks for scheduled reminders and sends email notifications when the reminder time is reached.
+
+Completed tasks are excluded from reminder notifications.
+
+---
+
+##  Tech Stack
+
+### Backend
+
+- Node.js
+- Express.js
+- TypeScript
+
+### Database
+
+- MongoDB
+- Mongoose
+
+### Authentication
+
+- JWT
+- bcrypt
+
+### AI
+
+- Groq API
+- GPT OSS Model
+
+### Email Service
+
+- Resend
+
+---
+
+##  Project Structure
+
+```text
+backend/
+│
+├── src/
+│   │
+│   ├── config/
+│   │   └── db.ts
+│   │
+│   ├── controllers/
+│   │   ├── authController.ts
+│   │   ├── taskController.ts
+│   │   ├── goalController.ts
+│   │   └── ...
+│   │
+│   ├── middleware/
+│   │   └── authMiddleware.ts
+│   │
+│   ├── models/
+│   │   ├── User.ts
+│   │   ├── Task.ts
+│   │   └── Goal.ts
+│   │
+│   ├── routes/
+│   │   ├── authRoutes.ts
+│   │   ├── taskRoutes.ts
+│   │   ├── goalRoutes.ts
+│   │   └── ...
+│   │
+│   ├── services/
+│   │   ├── aiService.ts
+│   │   ├── emailService.ts
+│   │   ├── notificationService.ts
+│   │   └── taskReschedulerService.ts
+│   │
+│   ├── app.ts
+│   └── server.ts
+│
+├── package.json
+├── tsconfig.json
+└── .env
