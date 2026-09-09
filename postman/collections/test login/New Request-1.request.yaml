@@ -1,0 +1,18 @@
+$kind: http-request
+name: New Request
+url: 'http://localhost:5000/api/goals'
+method: POST
+order: 3607680993222037
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{token}}'
+body:
+  type: json
+  content: |-
+    {
+      "title": "Learn DSA and practice leetcode",
+      "description": "Become interview ready for product based company ",
+      "targetDate": "2026-08-30"
+    }

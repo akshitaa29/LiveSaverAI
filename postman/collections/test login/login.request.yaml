@@ -1,0 +1,21 @@
+$kind: http-request
+name: login
+url: 'http://localhost:5000/api/auth/login'
+method: POST
+order: 1785826090928
+body:
+  type: json
+  content: |-
+    {
+      "email": "akshita3@gmail.com",
+      "password": "123456"
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      const res = pm.response.json();
+      if (res.token) {
+        pm.collectionVariables.set("token", res.token);
+        console.log("✅ Token saved to collection variable: token");
+      }
